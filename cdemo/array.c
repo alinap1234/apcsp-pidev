@@ -1,6 +1,15 @@
 #include <stdio.h>
 
 
+void myarrayadd(int arr[], int s, int n)
+{
+	for( int i = 0; i < s; i++)
+	{
+	arr[i] = arr[i] + n; 
+	}
+} 
+
+
 int main()
 {
 int arr [100];
@@ -10,15 +19,12 @@ int arr [100];
 	arr[i] = i * i;
 	printf("before switiching %d\n", arr[i]);
 	}
-	
-        int myarrayadd(int arr[], int s, int n)
-        {
-	arr[s] = n + s;
-	return arr[s];
-   	} 
+	myarrayadd(arr, 100, 1);
 
-
-       printf("after adding 1, the element is  %d\n", myarrayadd( &arr [100] ,arr [10], 1));
+	for (int i = 0; i < 100; i++)
+	{      
+	 printf("after adding 1, the element is  %d\n", arr[i]);
+	}
 
 }
 
