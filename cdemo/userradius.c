@@ -1,35 +1,52 @@
 #include <stdio.h>
 
-int main()
+int main(int argc, char* argv[])
 {
 float areaofcircle;
-char input1[256];
-char input2[256];
+char input[256];
+int arg1;
+int arg2;
+printf("Finding the area of the circle\n");
 
 
-fgets(input1, 256, stdin);
-fgets(input2, 256, stdin);
-
-int num;
-
-if(sscanf(input1, "%d", &num) == 1);
-	printf("yes");
-
-
-if(sscanf(input2, "%d", &num) == 1);
-        printf("yes");
-
-
-float myareafunction(float radius)
-{       
-        float areaofcircle = radius * radius  * 3.14;
-        return areaofcircle;
+float areaOfCircle(float a)
+{
+  return 3.14*a*a;
 }
 
-        for (float i = &num1 ; i < &num2; i ++)
+if(argc ==3);
 {
 
-printf ("the area is %f\n", myareafunction(i));
+int arg1;
+
+if(sscanf(argv[1], "%d", &arg1) == 1)
+{
+	
+	sscanf(argv[1],"%d", &arg1);
+}
+	else {printf("not an integer");}
+
+int arg2;
+
+if(sscanf(argv[2], "%d", &arg2) == 1)
+{
+	
+      sscanf(argv[2],"%d", &arg2);
+}
+
+	else {printf("not an integer");}
+
+
+printf("lower-bound radius %d and upper-boud radius %d\n", arg1, arg2);
+
+float r;
+    for (int i = arg1; i <= arg2; i++)
+    { 
+     r = areaOfCircle(i);
+    printf("Radius = %d, and Area = %f\n", i, r);
+    }
 
 }
+
+else   { printf("we're gonna need to ask for some value"
 }
